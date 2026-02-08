@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Car Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar">
+    <div class="logo">CarPlatform</div>
+
+    <ul class="nav-links">
+      <li><a href="#" onclick="loadCars()">Showroom</a></li>
+      <li><a href="#" onclick="filterCars('sale')">Sale</a></li>
+      <li><a href="#" onclick="filterCars('rent')">Rent</a></li>
+    </ul>
+
+    <div class="auth-buttons">
+      <button onclick="openLogin()">Login</button>
+      <button onclick="openRegister()">Register</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </nav>
+
+  <!-- ================= MAIN ================= -->
+  <main>
+    <h1 class="page-title">Available Cars</h1>
+    <div id="cars" class="cars-grid"></div>
+  </main>
+
+  <!-- ================= LOGIN MODAL ================= -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeAuth()">×</button>
+      <h2>Login</h2>
+
+      <input id="loginEmail" type="email" placeholder="Email" />
+      <input id="loginPassword" type="password" placeholder="Password" />
+
+      <button type="button" onclick="login()">Login</button>
+    </div>
+  </div>
+
+  <!-- ================= REGISTER MODAL ================= -->
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeAuth()">×</button>
+      <h2>Register</h2>
+
+      <input id="regName" type="text" placeholder="Name" />
+      <input id="regEmail" type="email" placeholder="Email" />
+      <input id="regPassword" type="password" placeholder="Password" />
+
+      <button type="button" onclick="register()">Register</button>
+    </div>
+  </div>
+
+  <!-- ================= ACTION MODAL (RENT / BUY) ================= -->
+  <div id="actionModal" class="modal" onclick="closeModals(event)">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModals()">×</button>
+
+      <h2 id="actionTitle"></h2>
+      <p id="actionText"></p>
+
+      <button class="primary" onclick="confirmAction()">Confirm</button>
+    </div>
+  </div>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="js/app.js"></script>
+
+</body>
+</html>
